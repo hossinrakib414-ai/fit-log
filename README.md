@@ -1,18 +1,29 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+# FitLog - Fitness & Workout Planner
 
-First, run the development server:
+## 📌 Description
+**FitLog** is a modern, feature-rich fitness and workout logging web application designed to help users explore exercises, build custom daily fitness routines, track burnt calories, and manage workout metrics seamlessly with a sleek dark-themed UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Technologies Used
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **State Management:** React Context API & LocalStorage
+* **Deployment:** Vercel
+
+## ✨ Key Features
+1. **Interactive Workout Library:** Browse a comprehensive catalog of exercises categorized by muscle groups and equipment.
+2. **Dynamic Details View:** Access in-depth workout specs including difficulty, sets, reps, duration, calories burned, and step-by-step instructions.
+3. **Daily Plan Management:** Add up to 5 customized workouts to your daily schedule with real-time summary metrics (total duration and calorie burn).
+4. **Saved For Later:** Bookmark and manage favorite exercises for quick access anytime.
+5. **Smart Sorting & Filtering:** Sort your planned workouts dynamically by duration, calories, or ratings.
+6. **Persistent Storage:** Your plan and saved items stay intact across browser sessions using local storage.
+7. **Responsive Dark-Themed UI:** Clean, modern, grid-based dark mode interface optimized for mobile, tablet, and desktop screens.
+8. **Custom 404 & Loading States:** Built-in fallback user interfaces including friendly error routing and smooth loading indicators.
+## End
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
