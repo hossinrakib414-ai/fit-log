@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import { use, useState, useEffect, Suspense } from 'react';
 import { usePlan } from '@/context/PlanContext';
 import { getWorkoutById } from '@/utils/api';
