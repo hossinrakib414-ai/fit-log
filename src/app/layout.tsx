@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="bg-[#0a0a0a] text-white min-h-screen flex flex-col font-sans">
         <PlanProvider>
-          <Navbar />
+          <Suspense fallback={<div className="h-16" />}>
+            <Navbar />
+          </Suspense>
 
           <main className="flex-1">{children}</main>
           <Footer />
