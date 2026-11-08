@@ -1,14 +1,13 @@
 'use client';
 
-import { use, useState, useEffect } from 'react';
+import { use, useState, useEffect, Suspense } from 'react';
 import { usePlan } from '@/context/PlanContext';
 import { getWorkoutById } from '@/utils/api';
 import { Workout } from '@/types';
-import Image from 'next/image';
 
 type Params = Promise<{ id: string }>;
 
-export default function WorkoutDetails({ params }: { params: Params }) {
+function WorkoutDetailsContent({ params }: { params: Params }) {
   const { id } = use(params);
   const { plan, saved, addToPlan, addToSaved } = usePlan();
   const [workout, setWorkout] = useState<Workout | null>(null);
@@ -190,5 +189,19 @@ export default function WorkoutDetails({ params }: { params: Params }) {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function WorkoutDetails({ params }: { params: Params }) {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center items-center min-h-[60vh]">
+          <div className="w-10 h-10 border-4 border-[#ccff00] border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      }
+    >
+      <WorkoutDetailsContent params={params} />
+    </Suspense>
   );
 }
