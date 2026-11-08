@@ -4,6 +4,7 @@ import { PlanProvider } from '@/context/PlanContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'FitLog — Workout Library',
@@ -19,7 +20,10 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="bg-[#0a0a0a] text-white min-h-screen flex flex-col font-sans">
         <PlanProvider>
-          <Navbar />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Navbar />
+          </Suspense>
+
           <main className="flex-1">{children}</main>
           <Footer />
           <Toaster
